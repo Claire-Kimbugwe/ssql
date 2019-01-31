@@ -36,7 +36,10 @@ def student_add():
 
     hackbright.make_new_student(first, last, github)
 
-    return redirect('/student-search')
+    return render_template('display.html' ,
+                            first=first,
+                            last=last,
+                            github=github)
 
 @app.route("/student-form")
 def get_info_students():   
